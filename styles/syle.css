@@ -113,7 +113,7 @@ nav .search-bar input[type="search"]::placeholder{
     color: var(--color-gray);
 }
 
-.nav .create{
+nav .create{
     display: flex;
     align-items: center;
     gap: 2rem;
