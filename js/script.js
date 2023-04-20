@@ -51,3 +51,25 @@ const searchMessage = () => {
 
 // search chat
 messageSearch.addEventListener('keyup', searchMessage);
+
+// Theme/Display Customization
+const theme = document.querySelector('#theme');
+const themeModal = document.querySelector('.customize-theme');
+
+// opens modal
+const openThemeModal = () => {
+    themeModal.style.display = 'grid';
+}
+
+// closes modal
+const closeThemeModal = (e) => {
+    if(e.target.classList.contains('customize-theme')) {
+        themeModal.style.display = 'none';
+    }
+}
+
+// close modal
+themeModal.addEventListener('click', closeThemeModal);
+
+// open modal
+theme.addEventListener('click', openThemeModal);
