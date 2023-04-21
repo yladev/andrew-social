@@ -150,3 +150,57 @@ const changeActiveColorClass = () => {
         colorPicker.classList.remove('active');
     })
 }
+
+// theme background values
+let lightColorLightness;
+let whiteColorLightness;
+let darkColorLightness;
+
+// change background colors
+const Bg1 = document.querySelector('.bg-1');
+const Bg2 = document.querySelector('.bg-2');
+const Bg3 = document.querySelector('.bg-3');
+
+const changeBG = () => {
+    root.style.setProperty('--light-color-lightness', lightColorLightness);
+    root.style.setProperty('--white-color-lightness', whiteColorLightness);
+    root.style.setProperty('--dark-color-lightness', darkColorLightness);
+}
+
+Bg1.addEventListener('click', () => {
+    // add active class
+    Bg1.classList.add('active');
+    // remove active class from the others
+    Bg2.classList.remove('active');
+    Bg3.classList.remove('active');
+    // remove customized changes from local storage
+    window.location.reload();
+})
+
+Bg2.addEventListener('click', () => {
+    darkColorLightness = '95%';
+    whiteColorLightness = '20%';
+    lightColorLightness = '15%';
+
+    // add active class
+    Bg2.classList.add('active');
+
+    // remove active class from the others
+    Bg1.classList.remove('active');
+    Bg3.classList.remove('active');
+    changeBG();
+});
+
+Bg3.addEventListener('click', () => {
+    darkColorLightness = '95%';
+    whiteColorLightness = '10%';
+    lightColorLightness = '0%';
+
+    // add active class
+    Bg3.classList.add('active');
+
+    // remove active class from thers
+    Bg1.classList.remove('active');
+    Bg2.classList.remove('active');
+    changeBG();
+})
